@@ -1,0 +1,37 @@
+<?php
+/** @var \Vendor\SavingsDisplay\Block\SavingsBadge $block */
+declare(strict_types=1);
+
+if (!$block->isEnabled()) {
+    return;
+}
+
+$savings = $block->getSavingsData();
+
+if (!$savings) {
+    return;
+}
+
+$showAmount     = $block->showAmount();
+$showPercentage = $block->showPercentage();
+$label          = $block->escapeHtml($block->getLabelText());
+
+if (!$showAmount && !$showPercentage) {
+    return;
+}
+?>
+<div class="savings-badge" aria-label="<?= $label ?> <?= $block->escapeHtmlAttr($savings['amount_formatted']) ?>">
+    <span class="savings-badge__label"><?= $label ?></span>
+
+    <?php if ($showAmount): ?>
+        <span class="savings-badge__amount">
+            <?= $block->escapeHtml($savings['amount_formatted']) ?>
+        </span>
+    <?php endif; ?>
+
+    <?php if ($showPercentage): ?>
+        <span class="savings-badge__percentage">
+            (<?= $block->escapeHtml((string) $savings['percentage']) ?>% <?= __('off') ?>)
+        </span>
+    <?php endif; ?>
+</div>

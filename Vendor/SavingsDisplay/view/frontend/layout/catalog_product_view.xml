@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!--
+            Inject savings badge after the product price block.
+            'product.info.price' is the standard price container on most themes.
+            Adjust sortOrder or referenceContainer if your theme differs.
+        -->
+        <referenceContainer name="product.info.price">
+            <block class="Vendor\SavingsDisplay\Block\SavingsBadge"
+                   name="vendor.savings.badge"
+                   template="Vendor_SavingsDisplay::savings_badge.phtml"
+                   after="product.price.final"
+                   cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>

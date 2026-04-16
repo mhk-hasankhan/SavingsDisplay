@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <savings_display>
+            <general>
+                <enabled>1</enabled>
+                <show_percentage>1</show_percentage>
+                <show_amount>1</show_amount>
+                <label_text>You save</label_text>
+                <min_savings_threshold>0</min_savings_threshold>
+            </general>
+        </savings_display>
+    </default>
+</config>

@@ -1,0 +1,47 @@
+/**
+ * Vendor_SavingsDisplay — Savings Badge styles
+ * Minimal, theme-friendly. Override in your theme as needed.
+ */
+
+.savings-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    padding: 5px 12px;
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2e7d32;
+    line-height: 1.4;
+}
+
+.savings-badge__label {
+    font-weight: 400;
+    color: #388e3c;
+}
+
+.savings-badge__amount {
+    font-weight: 700;
+}
+
+.savings-badge__percentage {
+    font-weight: 400;
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .savings-badge {
+        background-color: #1b5e20;
+        border-color: #388e3c;
+        color: #c8e6c9;
+    }
+
+    .savings-badge__label {
+        color: #a5d6a7;
+    }
+}
